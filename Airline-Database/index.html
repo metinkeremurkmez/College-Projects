@@ -1,0 +1,15 @@
+<form action="/results" method="post">
+
+    <input type = "text" name = "passport_no" placeholder="Passport_no">
+    <button type="submit">
+        Get Status
+    </button>
+</form>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
