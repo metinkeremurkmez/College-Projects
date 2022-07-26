@@ -1,0 +1,20 @@
+GET /_cat/indices/
+
+GET /smart-building-sensor/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+
+DELETE /smart-building-sensor/
+
+GET smart-building-sensor/_mapping?pretty
+
+
+
+
+
+
+

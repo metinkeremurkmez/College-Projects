@@ -1,0 +1,31 @@
+GEREKLİ ORTAMLARIN AYAĞA KALDIRILMASI;
+
+~ sudo systemctl start zookeeper
+~ sudo systemctl start kafka
+~ sudo systemctl start docker
+~ start-dfs.sh
+~ sudo sysctl -w vm.max_map_count=262144
+~ docker-compose -f es-single-kibana.yml up -d
+
+VERİNİN HDFS ORTAMINA TAŞINMASI;
+
+~ hdfs dfs -put -p /home/train/project_fin/KETI/ /user/train/datasets/
+
+JUPYTER NOTEBOOK AYAĞA KALDIRILMASI
+
+~ source ~/venvspark/bin/activate
+~ jupyter notebook
+
+KAFKA PRODUCER AÇILMASI;
+
+~ source ~/data-generator/gen-env/bin/activate
+~ cd data-generator
+~ python dataframe_to_kafka.py --input ~/tez/test.csv/part-00000-0ebb56bc-34bf-4ed0-995e-5f78050631cc-c000.csv --topic office-input
+
+
+
+
+
+
+
+
